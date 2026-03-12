@@ -1,4 +1,4 @@
-package com.victor.orderservice.event;
+package com.victor.paymentservice.event;
 
 import java.math.BigDecimal;
 
@@ -12,15 +12,6 @@ public class OrderCreatedEvent {
     private String status;
 
     public OrderCreatedEvent() {
-    }
-
-    public OrderCreatedEvent(Long orderId, String customerEmail, String productName, Integer quantity, BigDecimal price, String status) {
-        this.orderId = orderId;
-        this.customerEmail = customerEmail;
-        this.productName = productName;
-        this.quantity = quantity;
-        this.price = price;
-        this.status = status;
     }
 
     public Long getOrderId() {
