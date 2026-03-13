@@ -1,18 +1,18 @@
-package com.victor.notificationservice.event;
+package com.victor.paymentservice.event;
 
 import java.math.BigDecimal;
 
-public class PaymentCompletedEvent {
+public class PaymentFailedEvent {
 
     private Long paymentId;
     private Long orderId;
     private BigDecimal amount;
     private String status;
 
-    public PaymentCompletedEvent() {
+    public PaymentFailedEvent() {
     }
 
-    public PaymentCompletedEvent(Long paymentId, Long orderId, BigDecimal amount, String status) {
+    public PaymentFailedEvent(Long paymentId, Long orderId, BigDecimal amount, String status) {
         this.paymentId = paymentId;
         this.orderId = orderId;
         this.amount = amount;

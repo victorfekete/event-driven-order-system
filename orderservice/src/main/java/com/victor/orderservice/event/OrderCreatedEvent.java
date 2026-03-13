@@ -9,18 +9,16 @@ public class OrderCreatedEvent {
     private String productName;
     private Integer quantity;
     private BigDecimal price;
-    private String status;
 
     public OrderCreatedEvent() {
     }
 
-    public OrderCreatedEvent(Long orderId, String customerEmail, String productName, Integer quantity, BigDecimal price, String status) {
+    public OrderCreatedEvent(Long orderId, String customerEmail, String productName, Integer quantity, BigDecimal price) {
         this.orderId = orderId;
         this.customerEmail = customerEmail;
         this.productName = productName;
         this.quantity = quantity;
         this.price = price;
-        this.status = status;
     }
 
     public Long getOrderId() {
@@ -43,10 +41,6 @@ public class OrderCreatedEvent {
         return price;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
     public void setOrderId(Long orderId) {
         this.orderId = orderId;
     }
@@ -65,9 +59,5 @@ public class OrderCreatedEvent {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }

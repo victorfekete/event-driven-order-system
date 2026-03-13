@@ -15,7 +15,8 @@ public class Order {
     private String productName;
     private Integer quantity;
     private BigDecimal price;
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
 
     public Order() {
     }
@@ -40,7 +41,7 @@ public class Order {
         return price;
     }
 
-    public String getStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
 
@@ -64,7 +65,7 @@ public class Order {
         this.price = price;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
 }

@@ -1,4 +1,4 @@
-package com.victor.notificationservice.event;
+package com.victor.orderservice.event;
 
 import java.math.BigDecimal;
 
