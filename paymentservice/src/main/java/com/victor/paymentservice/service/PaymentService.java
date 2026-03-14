@@ -28,6 +28,12 @@ public class PaymentService {
     public void processPayment(OrderCreatedEvent event) {
         log.info("Processing payment for orderId={}", event.getOrderId());
 
+        if (paymentRepository.findByOrderId(event.getOrderId()).isPresent()) {
+            log.warn("Payment already exists for orderId={}, skipping duplicate event", event.getOrderId());
+            return;
+        }
+
+
         if (event.getPrice().compareTo(BigDecimal.valueOf(5000)) <= 0) {
             Payment payment = new Payment();
             payment.setOrderId(event.getOrderId());
